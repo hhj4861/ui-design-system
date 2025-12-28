@@ -1,5 +1,5 @@
 """
-gonggu_ui/core/tokens.py
+studio_ui/core/tokens.py
 브랜드 컬러, 타이포그래피, 간격 상수 정의
 """
 from dataclasses import dataclass

@@ -1,5 +1,5 @@
 """
-gonggu_ui/core/theme.py
+studio_ui/core/theme.py
 CSS 변수 생성 및 테마 확장
 """
 from dataclasses import dataclass, field, replace
@@ -10,7 +10,7 @@ from .tokens import Colors, COLORS
 @dataclass
 class Theme:
     """테마 클래스"""
-    name: str = "gonggu"
+    name: str = "studio"
     colors: Colors = field(default_factory=lambda: COLORS)
 
     def to_css_vars(self) -> str:

@@ -1,5 +1,5 @@
 """
-gonggu_ui.core - 디자인 토큰 및 테마 시스템
+studio_ui.core - 디자인 토큰 및 테마 시스템
 """
 from .tokens import COLORS, TYPOGRAPHY, SPACING, RADIUS, SHADOW
 from .theme import Theme, DEFAULT_THEME, DARK_THEME

@@ -1,10 +1,10 @@
 """
-gonggu_ui/components/forms.py
+studio_ui/components/forms.py
 폼 컴포넌트 - Native Wrapper 방식
 """
 import streamlit as st
 from typing import List, Tuple, Optional, Dict, Any
-from gonggu_ui.core.styles import inject_css
+from studio_ui.core.styles import inject_css
 
 
 def column_matcher(

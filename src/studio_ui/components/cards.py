@@ -1,15 +1,93 @@
 """
-gonggu_ui/components/cards.py
-카드 컴포넌트 - Native Wrapper 방식
+studio_ui/components/cards.py
+카드 컴포넌트
 """
 import streamlit as st
 from dataclasses import dataclass
 from typing import List, Optional, Callable, Any
-from gonggu_ui.core.styles import inject_css
+from studio_ui.core.styles import inject_css
 
 
 # ============================================================
-# PricingCard - Native Wrapper
+# FeatureCard - HTML 기반 (순수 표시용)
+# ============================================================
+
+def feature_card(emoji: str, title: str, description: str) -> str:
+    """
+    피처 카드 (HTML 반환)
+
+    Args:
+        emoji: 이모지
+        title: 제목
+        description: 설명
+
+    Returns:
+        HTML 문자열
+    """
+    return f"""
+    <div style="flex: 1; min-width: 150px; text-align: center; padding: 1rem;">
+        <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">{emoji}</div>
+        <div style="font-size: 1rem; font-weight: 600; color: #2d251f;">{title}</div>
+        <div style="font-size: 0.875rem; color: #8b7355;">{description}</div>
+    </div>
+    """
+
+
+# ============================================================
+# PricingCard - HTML 기반 (순수 표시용)
+# ============================================================
+
+def pricing_card_html(
+    plan: str,
+    price: str,
+    period: str,
+    features: list,
+    is_featured: bool = False
+) -> str:
+    """
+    요금제 카드 (HTML 반환)
+
+    Args:
+        plan: 플랜명
+        price: 가격
+        period: 기간
+        features: 기능 리스트 (✓로 시작하면 활성, 아니면 비활성)
+        is_featured: 추천 여부
+
+    Returns:
+        HTML 문자열
+    """
+    if is_featured:
+        bg = "linear-gradient(135deg, #fffcf8, #fff9f0)"
+        border = "2px solid #c9a87c"
+        badge = '<div style="position: absolute; top: -0.75rem; left: 50%; transform: translateX(-50%); background: #c9a87c; color: white; font-size: 0.625rem; font-weight: 700; padding: 0.25rem 0.75rem; border-radius: 9999px;">추천</div>'
+        label_color = "#c9a87c"
+    else:
+        bg = "#fffdfb"
+        border = "1px solid #e8e2d9"
+        badge = ""
+        label_color = "#8b7355"
+
+    features_html = "".join([
+        f'<div style="padding: 0.25rem 0; color: {"#5c4a3d" if f.startswith("✓") else "#c9bfb0"};">{f}</div>'
+        for f in features
+    ])
+
+    return f"""
+    <div style="background: {bg}; border: {border}; border-radius: 1rem; padding: 1.5rem; text-align: center; position: relative;">
+        {badge}
+        <div style="font-size: 0.75rem; font-weight: 600; color: {label_color}; text-transform: uppercase;">{plan}</div>
+        <div style="font-size: 2rem; font-weight: 700; color: #2d251f;">{price}</div>
+        <div style="font-size: 0.75rem; color: #8b7355; margin-bottom: 1rem;">{period}</div>
+        <div style="text-align: left; font-size: 0.875rem; color: #5c4a3d;">
+            {features_html}
+        </div>
+    </div>
+    """
+
+
+# ============================================================
+# PricingCard - Native Wrapper (상호작용 필요시)
 # ============================================================
 
 @dataclass

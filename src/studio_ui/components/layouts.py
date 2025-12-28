@@ -1,10 +1,10 @@
 """
-gonggu_ui/components/layouts.py
+studio_ui/components/layouts.py
 레이아웃 컴포넌트
 """
 import streamlit as st
 from typing import List, Optional, Dict, Any
-from gonggu_ui.core.styles import inject_css
+from studio_ui.core.styles import inject_css
 
 
 def section_container(

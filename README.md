@@ -1,18 +1,18 @@
-# gonggu-ui
+# studio-ui
 
 Streamlit 범용 디자인 시스템 - Native Wrapper 기반
 
 ## 설치
 
 ```bash
-pip install git+https://github.com/your-org/gonggu-ui.git
+pip install git+https://github.com/your-org/studio-ui.git
 ```
 
 ## 빠른 시작
 
 ```python
 import streamlit as st
-from gonggu_ui import apply_theme, PricingPlan, pricing_card
+from studio_ui import apply_theme, PricingPlan, pricing_card
 
 # 테마 적용
 apply_theme()
@@ -42,6 +42,28 @@ if pricing_card(plan):
 - `upload_card()`: 파일 업로드
 - `tab_selector()`: 탭 선택기
 - `column_matcher()`: 컬럼 매칭 폼
+
+### Auth (인증)
+- `login_form()`: 로그인 폼 UI
+- `signup_form()`: 회원가입 폼 UI
+- `logout_button()`: 로그아웃 버튼
+- `user_menu()`: 사용자 드롭다운 메뉴
+
+## studio-core와 함께 사용
+
+```python
+from studio_ui.components import login_form, logout_button
+from studio_core.auth.streamlit import login, logout
+
+# 로그인
+result = login_form()
+if result.submitted:
+    login(result.email, result.password)
+
+# 로그아웃
+if logout_button():
+    logout()
+```
 
 ## 라이선스
 
