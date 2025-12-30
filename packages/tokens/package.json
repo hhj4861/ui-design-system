@@ -1,0 +1,42 @@
+{
+  "name": "@studio-ui/tokens",
+  "version": "0.1.0",
+  "description": "Design tokens for Studio UI Design System",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./themes": {
+      "types": "./dist/themes/index.d.ts",
+      "import": "./dist/themes/index.js"
+    },
+    "./themes/*": {
+      "types": "./dist/themes/*.d.ts",
+      "import": "./dist/themes/*.js"
+    },
+    "./css/studio.css": "./dist/css/studio.css",
+    "./css/speedclinic.css": "./dist/css/speedclinic.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc && node scripts/generate-css.js",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  },
+  "keywords": [
+    "design-tokens",
+    "design-system",
+    "css-variables"
+  ],
+  "license": "MIT"
+}
