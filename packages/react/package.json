@@ -9,15 +9,18 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
     },
     "./components/ui": {
       "types": "./dist/components/ui/index.d.ts",
-      "import": "./dist/components/ui/index.js"
+      "import": "./dist/components/ui/index.js",
+      "default": "./dist/components/ui/index.js"
     },
     "./components/auth": {
       "types": "./dist/components/auth/index.d.ts",
-      "import": "./dist/components/auth/index.js"
+      "import": "./dist/components/auth/index.js",
+      "default": "./dist/components/auth/index.js"
     }
   },
   "files": [
