@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "studio-ui"
-version = "0.1.5"
+version = "0.1.6"
 description = "Streamlit 범용 디자인 시스템 - Native Wrapper 기반"
 readme = "README.md"
 license = {text = "MIT"}
