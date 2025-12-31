@@ -25,7 +25,7 @@ def gnb(
         href = "?page=" + item['page']
         if "section" in item:
             href += "&section=" + item['section']
-        menu_html += '    <a class="x-menu-item" href="' + href + '" target="_top">' + item["label"] + '</a>\n'
+        menu_html += '    <a class="x-menu-item" href="' + href + '">' + item["label"] + '</a>\n'
 
     html = """
 <style>
@@ -127,7 +127,7 @@ def gnb(
 <div class="x-menu">
 """ + menu_html + """</div>
 <div class="x-bar">
-    <a class="x-logo" href="?page=""" + landing_page + """" target="_top">
+    <a class="x-logo" href="?page=""" + landing_page + """">
         <div class="x-logo-icon">""" + logo_icon + """</div>
         <span class="x-logo-text">""" + logo_text + """</span>
     </a>
@@ -157,7 +157,7 @@ def gnb_html(
         href = "?page=" + item['page']
         if "section" in item:
             href += "&section=" + item['section']
-        menu_html += '    <a class="x-menu-item" href="' + href + '" target="_top">' + item["label"] + '</a>\n'
+        menu_html += '    <a class="x-menu-item" href="' + href + '">' + item["label"] + '</a>\n'
 
     return """
 <style>
@@ -259,7 +259,7 @@ def gnb_html(
 <div class="x-menu">
 """ + menu_html + """</div>
 <div class="x-bar">
-    <a class="x-logo" href="?page=""" + landing_page + """" target="_top">
+    <a class="x-logo" href="?page=""" + landing_page + """">
         <div class="x-logo-icon">""" + logo_icon + """</div>
         <span class="x-logo-text">""" + logo_text + """</span>
     </a>
