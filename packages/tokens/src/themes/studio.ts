@@ -1,50 +1,73 @@
 /**
- * Studio Gold Theme
- * 기존 Streamlit과 동일한 따뜻한 골드 테마
+ * Studio Theme - Dark + Beige
+ * 다크 배경 + 베이지 액센트 색상 조합
+ *
+ * 색상 조합:
+ * - 배경: #1c1c1c (다크)
+ * - 액센트: #a8896c (베이지)
+ * - 텍스트: #ffffff (화이트)
  */
 
-import { studioColors } from '../colors';
+import { speedClinicColors as darkBeigeColors } from '../colors';
 import { typography } from '../typography';
 import { spacing } from '../spacing';
 import { radius } from '../radius';
-import { shadows } from '../shadows';
+import { speedClinicShadows as darkBeigeShadows } from '../shadows';
 
+/** Dark + Beige 테마 객체 */
 export const studioTheme = {
   name: 'studio',
-  colors: studioColors,
+  variant: 'dark-beige',
+  colors: darkBeigeColors,
   typography,
   spacing,
   radius,
-  shadows,
+  shadows: darkBeigeShadows,
 } as const;
 
-/** CSS 변수 생성 */
+/** CSS 변수 생성 - Dark + Beige */
 export function generateStudioCss(): string {
-  const c = studioColors;
+  const c = darkBeigeColors;
   const t = typography;
   const s = spacing;
-  const r = radius;
-  const sh = shadows;
+  const sh = darkBeigeShadows;
 
   return `
 :root {
+  /* Base Radius */
+  --radius: 0.625rem;
+
   /* Background */
-  --bg-main: ${c.bg.main};
-  --bg-card: ${c.bg.card};
-  --bg-muted: ${c.bg.muted};
-  --bg-dark: ${c.bg.dark};
+  --background: ${c.bg.main};
+  --foreground: ${c.fg.primary};
+  --card: ${c.bg.card};
+  --card-foreground: ${c.fg.primary};
+  --popover: ${c.bg.card};
+  --popover-foreground: ${c.fg.primary};
 
-  /* Foreground (Text) */
-  --fg-primary: ${c.fg.primary};
-  --fg-secondary: ${c.fg.secondary};
-  --fg-muted: ${c.fg.muted};
-
-  /* Primary (Brand) */
+  /* Primary (Black) */
   --primary: ${c.primary.DEFAULT};
-  --primary-dark: ${c.primary.dark};
-  --primary-light: ${c.primary.light};
+  --primary-foreground: ${c.primary.foreground};
+
+  /* Secondary */
+  --secondary: ${c.bg.muted};
+  --secondary-foreground: ${c.primary.DEFAULT};
+
+  /* Muted */
+  --muted: ${c.bg.muted};
+  --muted-foreground: ${c.fg.secondary};
+
+  /* Accent */
+  --accent: ${c.bg.muted};
+  --accent-foreground: ${c.primary.DEFAULT};
+
+  /* Beige (Brand Accent) */
+  --beige: ${c.beige.DEFAULT};
+  --beige-light: ${c.beige.light};
+  --beige-dark: ${c.beige.dark};
 
   /* Semantic */
+  --destructive: ${c.error.DEFAULT};
   --success: ${c.success.DEFAULT};
   --success-bg: ${c.success.bg};
   --warning: ${c.warning.DEFAULT};
@@ -53,20 +76,31 @@ export function generateStudioCss(): string {
   --error-bg: ${c.error.bg};
   --info: ${c.info.DEFAULT};
 
-  /* Border */
-  --border-light: ${c.border.light};
-  --border-dark: ${c.border.dark};
+  /* Border & Input */
+  --border: ${c.border.light};
+  --input: ${c.border.light};
+  --ring: oklch(0.708 0 0);
+
+  /* Chart Colors */
+  --chart-1: ${c.chart[1]};
+  --chart-2: ${c.chart[2]};
+  --chart-3: ${c.chart[3]};
+  --chart-4: ${c.chart[4]};
+  --chart-5: ${c.chart[5]};
+
+  /* Sidebar */
+  --sidebar: ${c.sidebar.DEFAULT};
+  --sidebar-foreground: ${c.sidebar.foreground};
+  --sidebar-primary: ${c.sidebar.primary};
+  --sidebar-primary-foreground: ${c.sidebar.primaryForeground};
+  --sidebar-accent: ${c.sidebar.accent};
+  --sidebar-accent-foreground: ${c.sidebar.accentForeground};
+  --sidebar-border: ${c.sidebar.border};
+  --sidebar-ring: ${c.sidebar.ring};
 
   /* Typography */
   --font-sans: ${t.fontFamily.sans};
   --font-mono: ${t.fontFamily.mono};
-  --text-xs: ${t.fontSize.xs};
-  --text-sm: ${t.fontSize.sm};
-  --text-base: ${t.fontSize.base};
-  --text-lg: ${t.fontSize.lg};
-  --text-xl: ${t.fontSize.xl};
-  --text-2xl: ${t.fontSize['2xl']};
-  --text-3xl: ${t.fontSize['3xl']};
 
   /* Spacing */
   --spacing-xs: ${s.xs};
@@ -74,26 +108,50 @@ export function generateStudioCss(): string {
   --spacing-md: ${s.md};
   --spacing-lg: ${s.lg};
   --spacing-xl: ${s.xl};
-  --spacing-2xl: ${s['2xl']};
-  --spacing-3xl: ${s['3xl']};
 
   /* Radius */
-  --radius-sm: ${r.sm};
-  --radius-md: ${r.md};
-  --radius-lg: ${r.lg};
-  --radius-xl: ${r.xl};
-  --radius-full: ${r.full};
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
 
   /* Shadow */
   --shadow-sm: ${sh.sm};
   --shadow-md: ${sh.md};
   --shadow-lg: ${sh.lg};
-  --shadow-dark: ${sh.dark};
+}
 
-  /* Transition */
-  --transition-fast: 150ms ease;
-  --transition-normal: 200ms ease;
-  --transition-slow: 300ms ease;
+/* Dark Mode (기본) */
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
 }
 `.trim();
 }

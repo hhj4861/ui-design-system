@@ -68,17 +68,24 @@ export const speedClinicColors = {
     muted: 'oklch(0.708 0 0)',
   },
 
-  // 브랜드 (Black + Mint)
+  // 브랜드 (Dark + Beige)
   primary: {
     DEFAULT: 'oklch(0.205 0 0)',    // Black
     foreground: 'oklch(0.985 0 0)', // White
   },
 
-  // Mint 액센트
+  // Beige 액센트
+  beige: {
+    DEFAULT: '#a8896c',
+    light: '#f5f0eb',
+    dark: '#8b7355',
+  },
+
+  // Legacy mint (deprecated, use beige)
   mint: {
-    DEFAULT: '#48f08b',
-    light: '#e8fdf0',
-    dark: '#2ed573',
+    DEFAULT: '#a8896c',
+    light: '#f5f0eb',
+    dark: '#8b7355',
   },
 
   // 시맨틱
@@ -126,5 +133,54 @@ export const speedClinicColors = {
   },
 } as const;
 
+/** Cream 테마 색상 (화이트-베이지 라이트 테마) */
+export const creamColors = {
+  // 배경 (밝은 화이트 베이스)
+  bg: {
+    main: '#fffdfb',      // 크림 화이트
+    card: '#faf8f5',      // 카드 배경
+    muted: '#f7f4f0',     // 뮤트 배경
+    dark: '#2d251f',      // 다크 모드용
+  },
+
+  // 텍스트
+  fg: {
+    primary: '#2d251f',   // 메인 텍스트
+    secondary: '#5c4a3d', // 보조 텍스트
+    muted: '#8b7355',     // 뮤트 텍스트
+  },
+
+  // 브랜드 (Gold)
+  primary: {
+    DEFAULT: '#c9a87c',
+    dark: '#b8976b',
+    light: '#d4b88a',
+  },
+
+  // 시맨틱
+  success: {
+    DEFAULT: '#4a9d6b',
+    bg: '#e8f5ed',
+  },
+  warning: {
+    DEFAULT: '#ffc107',
+    bg: '#fffbeb',
+  },
+  error: {
+    DEFAULT: '#dc3545',
+    bg: '#fef2f2',
+  },
+  info: {
+    DEFAULT: '#fd7e14',
+  },
+
+  // 테두리
+  border: {
+    light: '#e8e2d9',
+    dark: '#d9d2c9',
+  },
+} as const;
+
 export type StudioColors = typeof studioColors;
 export type SpeedClinicColors = typeof speedClinicColors;
+export type CreamColors = typeof creamColors;

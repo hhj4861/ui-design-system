@@ -82,6 +82,85 @@ const studioCss = `
 }
 `.trim();
 
+const creamCss = `
+:root {
+  /* Background */
+  --bg-main: #fffdfb;
+  --bg-card: #faf8f5;
+  --bg-muted: #f7f4f0;
+  --bg-dark: #2d251f;
+
+  /* Foreground (Text) */
+  --fg-primary: #2d251f;
+  --fg-secondary: #5c4a3d;
+  --fg-muted: #8b7355;
+
+  /* Primary (Brand) */
+  --primary: #c9a87c;
+  --primary-dark: #b8976b;
+  --primary-light: #d4b88a;
+
+  /* Semantic */
+  --success: #4a9d6b;
+  --success-bg: #e8f5ed;
+  --warning: #ffc107;
+  --warning-bg: #fffbeb;
+  --error: #dc3545;
+  --error-bg: #fef2f2;
+  --info: #fd7e14;
+
+  /* Border */
+  --border-light: #e8e2d9;
+  --border-dark: #d9d2c9;
+
+  /* Tailwind CSS 호환 변수 */
+  --background: #fffdfb;
+  --foreground: #2d251f;
+  --card: #faf8f5;
+  --muted: #8b7355;
+  --secondary: #5c4a3d;
+  --border: #e8e2d9;
+
+  /* Typography */
+  --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Geist Mono', 'Fira Code', Consolas, monospace;
+  --text-xs: 0.625rem;
+  --text-sm: 0.75rem;
+  --text-base: 0.875rem;
+  --text-lg: 1rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.75rem;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 2.5rem;
+  --spacing-3xl: 3rem;
+
+  /* Radius */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* Shadow */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 12px rgba(201, 168, 124, 0.3);
+  --shadow-lg: 0 8px 24px rgba(201, 168, 124, 0.4);
+  --shadow-dark: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+  /* Transition */
+  --transition-fast: 150ms ease;
+  --transition-normal: 200ms ease;
+  --transition-slow: 300ms ease;
+}
+`.trim();
+
 const speedClinicCss = `
 :root {
   /* Base Radius */
@@ -200,10 +279,12 @@ async function main() {
 
   // CSS 파일 생성
   await writeFile(join(distDir, 'studio.css'), studioCss);
+  await writeFile(join(distDir, 'cream.css'), creamCss);
   await writeFile(join(distDir, 'speedclinic.css'), speedClinicCss);
 
   console.log('CSS files generated successfully!');
   console.log(`  - ${join(distDir, 'studio.css')}`);
+  console.log(`  - ${join(distDir, 'cream.css')}`);
   console.log(`  - ${join(distDir, 'speedclinic.css')}`);
 }
 
