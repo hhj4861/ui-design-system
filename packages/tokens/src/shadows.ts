@@ -20,5 +20,18 @@ export const speedClinicShadows = {
   xl: '0 20px 25px rgba(0, 0, 0, 0.15)',
 } as const;
 
+/** Deep Tech Glow용 그림자 (글로우 효과) */
+export const deepTechGlowShadows = {
+  none: 'none',
+  sm: '0 0 10px rgba(168, 137, 108, 0.2)',
+  md: '0 0 20px rgba(168, 137, 108, 0.3)',
+  lg: '0 0 40px rgba(168, 137, 108, 0.4)',
+  xl: '0 0 60px rgba(168, 137, 108, 0.5)',
+  // 글로우 펄스 효과용
+  glow: '0 0 20px rgba(168, 137, 108, 0.3)',
+  glowStrong: '0 0 30px rgba(168, 137, 108, 0.5)',
+} as const;
+
 export type Shadows = typeof shadows;
 export type SpeedClinicShadows = typeof speedClinicShadows;
+export type DeepTechGlowShadows = typeof deepTechGlowShadows;

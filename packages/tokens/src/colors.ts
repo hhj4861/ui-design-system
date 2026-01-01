@@ -181,6 +181,84 @@ export const creamColors = {
   },
 } as const;
 
+/** Deep Tech Glow 테마 색상 (다크 + 베이지 글로우) */
+export const deepTechGlowColors = {
+  // 배경 (딥 다크)
+  bg: {
+    main: '#0B0E14',      // 깊은 밤하늘
+    surface: '#151922',   // 서피스
+    elevated: '#1E2330',  // 상승된 서피스
+    card: '#151922',
+    muted: '#1E2330',
+  },
+
+  // 텍스트
+  fg: {
+    primary: '#FFFFFF',
+    secondary: '#94A3B8',
+    muted: '#64748B',
+  },
+
+  // 브랜드 (베이지 글로우)
+  primary: {
+    DEFAULT: '#a8896c',
+    foreground: '#0B0E14',
+  },
+
+  // 글로우 색상
+  glow: {
+    DEFAULT: '#a8896c',
+    light: '#c9a87c',
+    dark: '#8b7355',
+  },
+
+  // 시맨틱
+  success: {
+    DEFAULT: '#10B981',
+    bg: 'rgba(16, 185, 129, 0.1)',
+  },
+  warning: {
+    DEFAULT: '#F59E0B',
+    bg: 'rgba(245, 158, 11, 0.1)',
+  },
+  error: {
+    DEFAULT: '#EF4444',
+    bg: 'rgba(239, 68, 68, 0.1)',
+  },
+  info: {
+    DEFAULT: '#3B82F6',
+    bg: 'rgba(59, 130, 246, 0.1)',
+  },
+
+  // 테두리
+  border: {
+    light: 'rgba(168, 137, 108, 0.2)',
+    dark: 'rgba(168, 137, 108, 0.3)',
+  },
+
+  // 차트 색상 (따뜻한 팔레트)
+  chart: {
+    1: '#a8896c',
+    2: '#c9a87c',
+    3: '#8b7355',
+    4: '#d4b896',
+    5: '#6b5a47',
+  },
+
+  // 사이드바
+  sidebar: {
+    DEFAULT: '#0B0E14',
+    foreground: '#FFFFFF',
+    primary: '#a8896c',
+    primaryForeground: '#0B0E14',
+    accent: '#1E2330',
+    accentForeground: '#a8896c',
+    border: 'rgba(168, 137, 108, 0.15)',
+    ring: 'rgba(168, 137, 108, 0.4)',
+  },
+} as const;
+
 export type StudioColors = typeof studioColors;
 export type SpeedClinicColors = typeof speedClinicColors;
 export type CreamColors = typeof creamColors;
+export type DeepTechGlowColors = typeof deepTechGlowColors;

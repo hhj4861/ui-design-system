@@ -1,2 +1,13 @@
-export { LoginForm, type LoginFormProps } from './login-form';
-export { SignupForm, type SignupFormProps } from './signup-form';
+export {
+  LoginForm,
+  loginFormThemes,
+  type LoginFormProps,
+  type LoginFormTheme,
+} from './login-form';
+
+export {
+  SignupForm,
+  signupFormThemes,
+  type SignupFormProps,
+  type SignupFormTheme,
+} from './signup-form';

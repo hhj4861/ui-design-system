@@ -4,7 +4,16 @@
  */
 
 // Colors
-export { studioColors, speedClinicColors, type StudioColors, type SpeedClinicColors } from './colors';
+export {
+  studioColors,
+  speedClinicColors,
+  creamColors,
+  deepTechGlowColors,
+  type StudioColors,
+  type SpeedClinicColors,
+  type CreamColors,
+  type DeepTechGlowColors,
+} from './colors';
 
 // Typography
 export { typography, type Typography } from './typography';
@@ -16,14 +25,28 @@ export { spacing, type Spacing } from './spacing';
 export { radius, type Radius } from './radius';
 
 // Shadows
-export { shadows, speedClinicShadows, type Shadows, type SpeedClinicShadows } from './shadows';
+export {
+  shadows,
+  speedClinicShadows,
+  deepTechGlowShadows,
+  type Shadows,
+  type SpeedClinicShadows,
+  type DeepTechGlowShadows,
+} from './shadows';
 
 // Themes
 export {
   studioTheme,
   speedClinicTheme,
+  creamTheme,
+  deepTechGlowTheme,
   generateStudioCss,
   generateSpeedClinicCss,
+  generateCreamCss,
+  generateDeepTechGlowCss,
+  generateDeepTechGlowUtilities,
   type StudioTheme,
   type SpeedClinicTheme,
+  type CreamTheme,
+  type DeepTechGlowTheme,
 } from './themes';
