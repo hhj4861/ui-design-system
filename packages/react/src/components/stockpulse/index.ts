@@ -25,6 +25,32 @@ export { VerdictBadge, type VerdictBadgeProps, type VerdictType } from './verdic
 // Animation
 export { Marquee, type MarqueeProps } from './marquee';
 
+// Analysis Components
+export {
+  SixLensNav,
+  defaultLensItems,
+  type SixLensNavProps,
+  type LensItem,
+} from './six-lens-nav';
+export {
+  ScoreDashboard,
+  type ScoreDashboardProps,
+  type ScoreItem,
+} from './score-dashboard';
+export {
+  StrategyCard,
+  type StrategyCardProps,
+  type TradingStrategy,
+  type VerdictType as StrategyVerdictType,
+} from './strategy-card';
+export {
+  AnalysisCard,
+  defaultAnalysisSteps,
+  biotechAnalysisStep,
+  type AnalysisCardProps,
+  type AnalysisStep,
+} from './analysis-card';
+
 // Theme
 export {
   stockpulseTheme,

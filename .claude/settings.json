@@ -1,0 +1,40 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm:*)",
+      "Bash(npm:*)",
+      "Bash(npx:*)",
+      "Bash(tsc:*)",
+      "Bash(node:*)",
+      "Bash(git:*)",
+      "Bash(ls:*)",
+      "Bash(tree:*)",
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(cat:*)",
+      "Bash(mkdir:*)",
+      "Bash(rm:*)",
+      "Bash(cp:*)",
+      "Bash(mv:*)",
+      "Bash(echo:*)",
+      "Read(packages/**)",
+      "Read(.claude/**)",
+      "Read(CLAUDE.md)",
+      "Write(packages/**)",
+      "Edit(packages/**)"
+    ],
+    "deny": [
+      "Bash(rm -rf /)",
+      "Bash(rm -rf ~)"
+    ]
+  },
+  "context": {
+    "include": [
+      "CLAUDE.md",
+      ".claude/agents/**/*.md",
+      ".claude/standards/**/*.md",
+      ".claude/skills/**/*.md",
+      ".claude/rules/**/*.md"
+    ]
+  }
+}

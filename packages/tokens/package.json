@@ -23,7 +23,9 @@
       "default": "./dist/themes/*.js"
     },
     "./css/studio.css": "./dist/css/studio.css",
-    "./css/speedclinic.css": "./dist/css/speedclinic.css"
+    "./css/cream.css": "./dist/css/cream.css",
+    "./css/speedclinic.css": "./dist/css/speedclinic.css",
+    "./css/stockpulse.css": "./dist/css/stockpulse.css"
   },
   "files": [
     "dist"

@@ -27,6 +27,29 @@ export {
   FormField,
 } from './form';
 
+// Skeleton
+export { Skeleton } from './skeleton';
+
+// Progress
+export { Progress, type ProgressProps } from './progress';
+
+// Tabs
+export { Tabs, TabsList, TabsTrigger, TabsContent } from './tabs';
+
+// Sheet
+export {
+  Sheet,
+  SheetTrigger,
+  SheetClose,
+  SheetContent,
+  SheetHeader,
+  SheetFooter,
+  SheetTitle,
+  SheetDescription,
+  type SheetContentProps,
+  type SheetSide,
+} from './sheet';
+
 // Custom Components
 export { InlineSelect, type InlineSelectProps } from './inline-select';
 export { FileUploader, type FileUploaderProps } from './file-uploader';
