@@ -26,6 +26,11 @@
       "types": "./dist/components/speedclinic/index.d.ts",
       "import": "./dist/components/speedclinic/index.js",
       "default": "./dist/components/speedclinic/index.js"
+    },
+    "./components/stockpulse": {
+      "types": "./dist/components/stockpulse/index.d.ts",
+      "import": "./dist/components/stockpulse/index.js",
+      "default": "./dist/components/stockpulse/index.js"
     }
   },
   "files": [

@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git rm:*)",
+      "Bash(cat:*)",
+      "Bash(git push:*)",
+      "Bash(git config:*)",
+      "Bash(ssh:*)",
+      "Bash(ssh-keygen:*)",
+      "Bash(git remote set-url:*)",
+      "Bash(tree:*)",
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(pkill:*)",
+      "Bash(ln:*)",
+      "Bash(lsof:*)",
+      "Bash(xargs kill -9)",
+      "Bash(curl:*)",
+      "Bash(packages/react/package.json )",
+      "Bash(packages/react/src/providers/theme-provider.tsx )",
+      "Bash(packages/react/src/components/stockpulse/ )",
+      "Bash(packages/tokens/scripts/generate-css.js )",
+      "Bash(packages/tokens/src/themes/index.ts )",
+      "Bash(packages/tokens/src/themes/stockpulse.ts )",
+      "Bash(scripts/)"
+    ]
+  }
+}

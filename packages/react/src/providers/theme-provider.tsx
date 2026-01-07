@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 
-type Theme = 'studio' | 'speedclinic' | 'system';
+type Theme = 'studio' | 'speedclinic' | 'stockpulse' | 'system';
 
 interface ThemeProviderProps {
   children: React.ReactNode;
@@ -38,7 +38,7 @@ export function ThemeProvider({
 
       // HTML에 테마 클래스 적용
       const root = document.documentElement;
-      root.classList.remove('theme-studio', 'theme-speedclinic');
+      root.classList.remove('theme-studio', 'theme-speedclinic', 'theme-stockpulse');
       if (newTheme !== 'system') {
         root.classList.add(`theme-${newTheme}`);
       }

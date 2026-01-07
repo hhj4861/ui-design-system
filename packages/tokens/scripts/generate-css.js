@@ -273,6 +273,108 @@ const speedClinicCss = `
 }
 `.trim();
 
+const stockpulseCss = `
+/* StockPulse Theme - Dark Violet */
+.theme-stockpulse,
+[data-theme="stockpulse"] {
+  --radius: 0.75rem;
+  --background: #09090b;
+  --foreground: #fafafa;
+  --card: #0a0a0c;
+  --card-foreground: #fafafa;
+  --popover: #0a0a0c;
+  --popover-foreground: #fafafa;
+  --primary: #8b5cf6;
+  --primary-foreground: #fafafa;
+  --secondary: #18181b;
+  --secondary-foreground: #fafafa;
+  --muted: #18181b;
+  --muted-foreground: #a1a1aa;
+  --accent: #8b5cf6;
+  --accent-foreground: #fafafa;
+  --destructive: #ef4444;
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --info: #3b82f6;
+  --border: #27272a;
+  --input: #18181b;
+  --ring: #8b5cf6;
+  --chart-1: #8b5cf6;
+  --chart-2: #22c55e;
+  --chart-3: #fbbf24;
+  --chart-4: #ec4899;
+  --chart-5: #ef4444;
+  --sidebar: #09090b;
+  --sidebar-foreground: #fafafa;
+  --sidebar-primary: #8b5cf6;
+  --sidebar-primary-foreground: #fafafa;
+  --sidebar-accent: #18181b;
+  --sidebar-accent-foreground: #fafafa;
+  --sidebar-border: #27272a;
+  --sidebar-ring: #8b5cf6;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --glass-bg: rgba(15, 15, 18, 0.8);
+  --glass-bg-solid: rgba(15, 15, 18, 0.95);
+  --glass-border: rgba(255, 255, 255, 0.05);
+  --violet-glow: rgba(139, 92, 246, 0.5);
+  color-scheme: dark;
+}
+
+.theme-stockpulse .glass-card,
+[data-theme="stockpulse"] .glass-card {
+  background: var(--glass-bg-solid);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  transition: border-color 0.2s;
+}
+
+@media (min-width: 768px) {
+  .theme-stockpulse .glass-card,
+  [data-theme="stockpulse"] .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+}
+
+.theme-stockpulse .glass-card:hover,
+[data-theme="stockpulse"] .glass-card:hover {
+  border-color: rgba(139, 92, 246, 0.2);
+}
+
+.theme-stockpulse .text-glow-violet,
+[data-theme="stockpulse"] .text-glow-violet {
+  text-shadow: 0 0 8px rgba(139, 92, 246, 0.8), 0 0 16px rgba(139, 92, 246, 0.5);
+}
+
+.theme-stockpulse ::-webkit-scrollbar,
+[data-theme="stockpulse"] ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.theme-stockpulse ::-webkit-scrollbar-track,
+[data-theme="stockpulse"] ::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.theme-stockpulse ::-webkit-scrollbar-thumb,
+[data-theme="stockpulse"] ::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 4px;
+}
+
+.theme-stockpulse ::-webkit-scrollbar-thumb:hover,
+[data-theme="stockpulse"] ::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+`.trim();
+
 async function main() {
   // CSS 디렉토리 생성
   await mkdir(distDir, { recursive: true });
@@ -281,11 +383,13 @@ async function main() {
   await writeFile(join(distDir, 'studio.css'), studioCss);
   await writeFile(join(distDir, 'cream.css'), creamCss);
   await writeFile(join(distDir, 'speedclinic.css'), speedClinicCss);
+  await writeFile(join(distDir, 'stockpulse.css'), stockpulseCss);
 
   console.log('CSS files generated successfully!');
   console.log(`  - ${join(distDir, 'studio.css')}`);
   console.log(`  - ${join(distDir, 'cream.css')}`);
   console.log(`  - ${join(distDir, 'speedclinic.css')}`);
+  console.log(`  - ${join(distDir, 'stockpulse.css')}`);
 }
 
 main().catch(console.error);
