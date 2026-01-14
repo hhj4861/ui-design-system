@@ -14,7 +14,7 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
+/lib/
 lib64/
 parts/
 sdist/
@@ -76,3 +76,4 @@ dmypy.json
 
 # ruff
 .ruff_cache/
+!packages/**/src/lib/
